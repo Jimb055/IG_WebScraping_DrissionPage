@@ -1,5 +1,24 @@
 import json
 from DrissionPage import ChromiumPage, ChromiumOptions
+import re
+
+
+def parse_number(text):
+    """Convierte strings tipo '500M' o '10.5K' en enteros."""
+    if not text: return 0
+    text = text.upper().replace(',', '').strip()
+    multiplier = 1
+    if 'M' in text:
+        multiplier = 1_000_000
+        text = text.replace('M', '')
+    elif 'K' in text:
+        multiplier = 1_000
+        text = text.replace('K', '')
+    try:
+        return int(float(text) * multiplier)
+    except:
+        return 0
+    
 
 def scrape_mirrors_indetectable(usuario):
 
@@ -25,10 +44,17 @@ def scrape_mirrors_indetectable(usuario):
             
             for i, item in enumerate(items):
                 img = item.ele('tag:img')
+                caption = item.ele('tag:img').attr('alt') or ""
+                fecha_relativa = item.ele('.time').text if item.ele('.time') else "Desconocida"
+                hashtags = re.findall(r'#\w+', caption)
+                mentions = re.findall(r'@\w+', caption)
                 posts.append({
                     "id": i + 1,
-                    "caption": img.attr('alt') or "Sin descripción",
-                    "url_img": img.attr('data-src') or img.attr('src')
+                    "caption": caption,
+                    "url_img": img.attr('data-src') or img.attr('src'),
+                    "fecha": fecha_relativa,
+                    "hashtags": hashtags,
+                    "mentions": mentions
                 })
                 print(f"  → Post {i+1} capturado.")
                 
