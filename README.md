@@ -11,7 +11,7 @@ muros de seguridad (WAF) como Cloudflare.
 
 ------------------------------------------------------------------------
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 -   **Lenguaje:** Python 3.9+
 -   **Automatización:** DrissionPage (Control directo de navegador sin
@@ -22,7 +22,7 @@ muros de seguridad (WAF) como Cloudflare.
 
 ------------------------------------------------------------------------
 
-## 📋 Requisitos Previos
+##  Requisitos Previos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
@@ -32,7 +32,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
 ------------------------------------------------------------------------
 
-## 🚀 Instalación y Configuración
+##  Instalación y Configuración
 
 ### 1. Clonar el repositorio
 
@@ -56,7 +56,7 @@ ruta_edge = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 
 ------------------------------------------------------------------------
 
-## 💻 Ejecución
+##  Ejecución
 
 ``` bash
 python script.py
@@ -67,7 +67,7 @@ procederá a abrir una instancia de Edge para recolectar los datos.
 
 ------------------------------------------------------------------------
 
-## 📦 Salida (Output)
+##  Salida (Output)
 
 ``` json
 [
@@ -82,7 +82,7 @@ procederá a abrir una instancia de Edge para recolectar los datos.
 
 ------------------------------------------------------------------------
 
-## 🧠 Notas de Ingeniería
+##  Notas
 
 -   **Bypass de Seguridad:**\
     Se optó por DrissionPage para evitar la variable
