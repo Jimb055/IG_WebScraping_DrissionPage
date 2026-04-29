@@ -46,6 +46,11 @@ cd Web_scraping_ig
 ``` bash
 pip install DrissionPage
 ```
+o
+
+``` bash
+pip install -r requirements.txt
+```
 
 ### 3. Configurar la ruta del navegador (Crítico)
 
@@ -54,6 +59,7 @@ pip install DrissionPage
 ruta_edge = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 ```
 
+o la ruta que mejor se acomode a su navegador con motor Chromium
 ------------------------------------------------------------------------
 
 ##  Ejecución
